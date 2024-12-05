@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content = "IE-edge">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/png" href="images/favicon.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Savings</title>
+    <link rel="stylesheet" href="savings.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <aside class="sidebar">
+        <header class="sidebar-header">
+            <a href="main.html" class="header-logo">
+                <img src="images/logonav.png" alt="Plan Pocket">
+            </a>
+            <button class="toggler sidebar-toggler">
+                <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+        </header>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-list primary-nav">
+                <li class="nav-item">
+                    <a href="main1.html" class="nav-link">
+                         <span class="nav-icon material-symbols-rounded">house</span> 
+                         <span class="nav-label">Main</span>  
+                    </a>
+                    <span class="nav-tooltip">Main</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="expenses.html" class="nav-link">
+                         <span class="nav-icon material-symbols-rounded">Payments</span> 
+                         <span class="nav-label">Expenses</span>  
+                    </a>
+                    <span class="nav-tooltip">Expenses</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="savings.html" class="nav-link">
+                         <span class="nav-icon material-symbols-rounded">savings</span> 
+                         <span class="nav-label">Savings</span>  
+                    </a>
+                    <span class="nav-tooltip">Savings</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="wishlist.html" class="nav-link">
+                         <span class="nav-icon material-symbols-rounded">shopping_cart</span> 
+                         <span class="nav-label">Wish List</span>  
+                    </a>
+                    <span class="nav-tooltip">Wish List</span>
+                </li>
+            </ul>
+
+             <!-- Add spacing between primary and secondary nav lists -->
+             <div class="nav-spacing"></div>
+
+             <ul class="nav-list secondary-nav">
+                 <!-- Add additional spacing before Logout -->
+                 <div class="nav-item-spacing"></div>
+ 
+                 <li class="nav-item">
+                     <a href="index.html" class="nav-link">
+                          <span class="nav-icon material-symbols-rounded">logout</span> 
+                          <span class="nav-label">Logout</span>  
+                     </a>
+                     <span class="nav-tooltip">Logout</span>
+                 </li>
+             </ul>
+        </nav>
+    </aside>
+
+    <div class="hero">
+        <div class="content">
+            <a href="health.html" class="btn">
+                <span class="nav-icon material-symbols-rounded">health_and_safety</span>
+                <span class="navLabel">Health</span>
+            </a>
+            
+            <a href="personal.html" class="btn">
+                <span class="nav-icon material-symbols-rounded">person</span>
+                <span class="navLabel">Personal</span>
+            </a>
+            
+            <a href="future.html" class="btn">
+                <span class="nav-icon material-symbols-rounded">Update</span>
+                <span class="navLabel">Future</span>
+            </a>
+        </div>
+    </div>
+    
+    <script src="savings.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --sidebar-width: 270px; /* Default sidebar width */
+    --collapsed-sidebar-width: 85px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: white;
+}
+
+.sidebar {
+    width: 270px;
+    position: fixed;
+    margin: 16px;
+    border-radius: 16px;
+    background: #ffeb9b;
+    height: calc(100vh - 32px);
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed {
+    width: 85px;
+}
+
+.sidebar-header {
+    display: flex;
+    padding: 25px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-header .header-logo img {
+    width: 90px;
+    height: 90px;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.sidebar.collapsed .header-logo {
+    display: none; /* Hides the logo when sidebar is collapsed */
+}
+
+.sidebar-header .toggler {
+    height: 35px;
+    width: 35px;
+    border: none;
+    color: #151A2D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background: #4caf50;
+    transition: 0.4s ease;
+}
+
+.sidebar-header .toggler:hover {
+    background: #3d8d40;
+}
+
+.sidebar-header .toggler span {
+    font-size: 1.75rem;
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-header .toggler span { 
+    transform: rotate(180deg);
+}
+
+.sidebar-nav .nav-list {
+    list-style: none;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+    transform: translateY(15px);
+}
+
+.sidebar-nav .nav-list li {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 4px;
+    padding: 0 15px;
+    flex-direction: column;
+}
+
+.sidebar-nav .nav-link {
+    color: black;
+    display: flex;
+    gap: 12px;
+    white-space: nowrap;
+    border-radius: 10px;
+    padding: 12px;
+    align-items: center;
+    background: #ffeb9b;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+.sidebar-nav .nav-link:hover { 
+    background: white; /* White background on hover */ 
+}
+
+.sidebar.collapsed .sidebar-nav .nav-link .nav-label {
+    opacity: 0;
+    background: #fff;
+}
+
+.sidebar-nav .nav-item {
+    position: relative;
+}
+
+.sidebar-nav .nav-tooltip {
+    position: absolute;
+    top: -10px;
+    opacity: 0;
+    pointer-events: none;
+    left: calc(100% + 25px);
+    color: black;
+    padding: 6px 12px;
+    background: rgb(228, 228, 228);
+    border-radius: 10px;
+    white-space: nowrap;
+    box-shadow: 0 5px 10px rgba (0,0,0, 0.1);
+    transition: 0s;
+}
+
+.sidebar-nav .nav-item:hover .nav-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(50%);
+    transition: 0.4s ease;
+}
+
+/* Additional CSS to keep the Expenses link background white */
+.sidebar-nav .nav-item a[href="wishlist.html"] {
+    background: white;
+}
+
+/* Additional spacing for specific nav items */
+.nav-item-spacing {
+    height: 65px; /* Adjust the height as needed */
+}
+
+.parent-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 30px; /* Padding around the form */
+    border-radius: 16px;
+    max-width: 450px; /* Restrict maximum width */
+    width: 100%; /* Make it responsive */
+}
+
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Add more spacing between fields */
+    width: 100%; /* Ensure full width for alignment */
+}
+
+.form-group label {
+    font-size: 18px; /* Larger font for labels */
+    flex: 1;
+    margin-right: 15px; /* Add more space between label and input */
+}
+
+.form-group input {
+    flex: 2;
+    padding: 12px; /* Increase padding for larger input fields */
+    font-size: 16px; /* Larger font size for inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#calculate-btn {
+    align-self: center; /* Center the button */
+    margin-top: 20px;
+    padding: 15px 40px; /* Larger button with more padding */
+    font-weight: bold;
+    background-color: #4caf50;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Increase button font size */
+}
+
+#calculate-btn:hover {
+    background-color: #45a049; /* Add hover effect */
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    display: none; /* Initially hidden */
+}
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.popup-message {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
